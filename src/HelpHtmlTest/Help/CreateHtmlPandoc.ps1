@@ -20,6 +20,7 @@ echo "Creation help.html: sourceTime is $sourceTime, targetTime is $targetTime"
 if ( $sourceTime -gt   $targetTime )
 {
     echo "Start Create help.html"
+    mkdir -Force ../Resources 
     # Pandocを使用してMarkdownからHTMLファイルを生成する。cssなどを指定する
     & 'C:\Program Files\Pandoc\pandoc' -s ./help.md -o ../Resources/help.html --toc --template=./elegant_bootstrap_menu.html --self-contained -t html5 -c my_markdown.css
     echo "Finished Create help.html"
